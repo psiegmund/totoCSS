@@ -1,0 +1,22 @@
+
+@layer components {
+    .btn-cta {
+        @apply border rounded-sm py-2 px-3 bg-ctaLight hover:bg-slate-500 text-xs
+    }
+    .btn-cta-dark {
+        @apply border border-bgLight text-white rounded-md py-2 px-3 bg-black hover:bg-slate-500 text-xs
+    }
+    .odds-item {
+        @apply flex rounded-sm h-12 w-12 cursor-pointer items-center justify-center p-2 transition duration-200 ease-in-out bg-bgOdds hover:bg-bgOddsHover
+    }
+    .odds-item-up {
+        @apply flex rounded-sm h-12 w-12 cursor-pointer items-center justify-center p-2 border-green-400 border-[1px] transition duration-200 ease-in-out bg-bgOdds hover:bg-bgOddsHover hover:from-bgOddsHover hover:via-bgOddsHover hover:to-green-600
+    }
+    .odds-item-down {
+        @apply flex rounded-sm h-12 w-12 cursor-pointer items-center justify-center p-2 border-red-500 border-[1px] transition duration-200 ease-in-out bg-bgOdds hover:bg-bgOddsHover hover:from-bgOddsHover hover:via-bgOddsHover hover:to-red-600
+    }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

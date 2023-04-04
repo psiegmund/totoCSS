@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Totobet DEV Frontend</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-w-[375px] p-0 m-0 sm:block min-h-screen bg-bgDark text-gray-50 antialiased debug-screens">
+<!-- """""""""""""""""""""" -->
+<!-- HEADER -->
+<!-- """""""""""""""""""""" -->
+    <header class="sticky top-0 flex flex-col items-center justify-between pt-3 text-black bg-bgDark">
+        <div class="flex justify-between w-full px-2">
+<!-- LOGO -->
+            <div class="flex items-center">
+                <div class="w-36">
+                    <img src="./assets/img/totobet-logo.png" alt="totobet-logo">
+                </div>
+            </div>
+            <nav class="flex justify-between">
+<!-- DESKTOP NAV / LIVE & PREMATCH -->
+                <div class="hidden md:flex gap-x-4">
+                    <div class="btn-cta">
+                        <a class="cursor hover:text-orange-400" href="https://totobet.dirodata.de">Sportwetten</a>
+                    </div>
+                    <div class="btn-cta">
+                        <a class="cursor hover:text-blue-400" href="https://totobet.dirodata.de/live">Livewetten</a>
+                    </div>
+                </div>
+<!-- USER NAV -->
+                <div class="flex gap-x-2">
+                    <div class="btn-cta-dark">
+                        <a href="" class="">EINLOGGEN</a>
+                    </div>
+                    <div class="btn-cta">
+                        <a href="" class="">REGISTRIEREN</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <nav class="flex w-full px-1 pt-6 text-white text-[0.6rem] justify-evenly">
+            <div class="flex flex-col items-center w-1/5 hover:text-live">
+                <img src="./assets/img/live.png" width="30px" alt="live-logo">
+                <p>Live</p>
+            </div>
+            <div class="flex flex-col items-center w-1/5 hover:text-live">
+                <img src="./assets/img/calendar.png" width="30px" alt="kalender-ogo">
+                <p>Kalender</p>
+            </div>
+            <div class="flex flex-col items-center w-1/5 hover:text-live">
+                <img src="./assets/img/soccer.png" width="30px" alt="fussball-logo">
+                <p>Fußball</p>
+            </div>
+            <div class="flex flex-col items-center w-1/5 hover:text-live">
+                <img src="./assets/img/tennis.png" width="30px" alt="tennis-logo">
+                <p>Tennis</p>
+            </div>
+            <div class="flex flex-col items-center w-1/5 hover:text-live">
+                <img src="./assets/img/basketball.png" width="30px" alt="basketball-logo">
+                <p>Basketball</p>
+            </div>
+            <div class="flex flex-col items-center w-1/5 hover:text-live">
+                <img src="./assets/img/burgerMenu.png" width="30px" alt="azsport-logo">
+                <p>A-Z Sport</p>
+            </div>
+        </nav>
+        <nav class="flex w-full px-1 py-2 text-white text-[0.6rem] bg-bgPrimary justify-center gap-6">
+            <div class="flex justify-center w-32 px-3 py-2 text-black bg-gray-100 min-w-fit text-md rounded-2xl hover:bg-gray-500">Tipp</div>
+            <div class="flex justify-center w-32 px-3 py-2 text-black bg-gray-100 min-w-fit text-md rounded-2xl hover:bg-gray-500">Über/Unter</div>
+            <div class="flex justify-center w-32 px-3 py-2 text-black bg-gray-100 min-w-fit text-md rounded-2xl hover:bg-gray-500">Handicap</div>
+            <div class="flex justify-center w-32 px-3 py-2 text-black bg-gray-100 min-w-fit text-md rounded-2xl hover:bg-gray-500">Beide Teams treffen</div>
+        </nav>
+    </header>
+    <main class="grid grid-flow-col grid-cols-12 bg-bgPrimary gap-x-4">
+        <!-- LEFT -->
+        <aside class="hidden col-span-2 row-span-6 text-sm md:flex">
+            <div class="w-48 px-2 space-y-8">
+                <div class="leading-loose">
+                    <h2 class="mb-2 text-xl text-gray-400">Quick Links</h2>
+                    <div>Empfehlungen</div>
+                    <div>Top-Kombis</div>
+                    <div>Spiele von heute</div>
+                    <div>Deutscher Fußball</div>
+                    <div>europäischer Fußball</div>
+                </div>
+            <div class="leading-loose">
+                <h2 class="mb-2 text-xl text-gray-400">Top Sport</h2>
+                <div>Fußball</div>
+                <div>Tennis</div>
+                <div>Basketball</div>
+            </div>
+            <div class="leading-loose">
+                <h2 class="mb-2 text-xl text-gray-400">A-Z Sport</h2>
+                <div>American Football</div>
+                <div>Baseball</div>
+                <div>Basketball</div>
+                <div>Cricket</div>
+                <div>Darts</div>
+            </div>
+        </aside>
+        <!-- CENTER -->
+        <section class="grid justify-between grid-flow-col grid-cols-12 col-span-full md:col-span-8 shrink-1">
+            <!-- TOP-BETS -->
+            <section class="justify-between hidden w-auto pb-3 md:flex col-span-full shrink-1">
+                <article class="flex flex-col text-sm divide-y rounded-md bg-bgOdds min-w-fit">
+                    <div class="flex justify-between px-3 py-3 text-center">
+                        <div class="leading-none">
+                            <div>3949</div>
+                            <div class="text-xs">
+                                Wetten platziert
+                            </div>
+                        </div>
+                        <div class="leading-none">
+                            <div>
+                                4er
+                            </div>
+                            <div class="text-xs">
+                                Kombi
+                            </div>
+                        </div>
+                        <div class="leading-none">
+                            <div>300,23</div>
+                            <div class="text-xs">
+                                Gesamtquote
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col px-4 py-3 gap-y-2">
+                        <div class="leading-tight">
+                            <div>AC Mailand</div>
+                            <div class="text-gray-300">Tottenham Hotspur - AC Mailand</div>
+                        </div>
+                        <div class="leading-tight">
+                            <div>Bayern München</div>
+                            <div class="text-gray-300">Bayern München - PSG</div>
+                        </div>
+                        <div class="leading-tight">
+                            <div>Borussia Dortmund</div>
+                            <div class="text-gray-300">FC Chelsea - Borussia Dortmund</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center px-2 py-3 text-ctaLight">
+                        Wettschein #2
+                    </div>
+                </article>
+                <article class="flex flex-col text-sm divide-y rounded-md bg-bgOdds min-w-fit">
+                    <div class="flex justify-between px-3 py-3 text-center">
+                        <div class="leading-none">
+                            <div>3949</div>
+                            <div class="text-xs">
+                                    Wetten platziert
+                                </div>
+                            </div>
+                            <div class="leading-none">
+                                <div>
+                                    4er
+                                </div>
+                                <div class="text-xs">
+                                    Kombi
+                                </div>
+                            </div>
+                            <div class="leading-none">
+                                <div>300,23</div>
+                                <div class="text-xs">
+                                    Gesamtquote
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col px-4 py-3 gap-y-2">
+                            <div class="leading-tight">
+                                <div>AC Mailand</div>
+                                <div class="text-gray-300">Tottenham Hotspur - AC Mailand</div>
+                            </div>
+                            <div class="leading-tight">
+                                <div>Bayern München</div>
+                                <div class="text-gray-300">Bayern München - PSG</div>
+                            </div>
+                            <div class="leading-tight">
+                                <div>Borussia Dortmund</div>
+                                <div class="text-gray-300">FC Chelsea - Borussia Dortmund</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center px-2 py-3">
+                            Wettschein #2
+                        </div>
+                </article>
+                <article class="flex flex-col text-sm divide-y rounded-md bg-bgOdds min-w-fit">
+                    <div class="flex justify-between px-3 py-3 text-center">
+                            <div class="leading-none">
+                                <div>5747</div>
+                                <div class="text-xs">
+                                    Wetten platziert
+                                </div>
+                            </div>
+                            <div class="leading-none">
+                                <div>
+                                    4er
+                                </div>
+                                <div class="text-xs">
+                                    Kombi
+                                </div>
+                            </div>
+                            <div class="leading-none">
+                                <div>300,23</div>
+                                <div class="text-xs">
+                                    Gesamtquote
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col px-4 py-3 gap-y-2">
+                            <div class="leading-tight">
+                                <div>AC Mailand</div>
+                                <div class="text-gray-300">Tottenham Hotspur - AC Mailand</div>
+                            </div>
+                            <div class="leading-tight">
+                                <div>Bayern München</div>
+                                <div class="text-gray-300">Bayern München - PSG</div>
+                            </div>
+                            <div class="leading-tight">
+                                <div>Borussia Dortmund</div>
+                                <div class="text-gray-300">FC Chelsea - Borussia Dortmund</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center px-2 py-3">
+                            Wettschein #3
+                        </div>
+                </article>
+                
+            </section>
+            <!-- FIXTURES -->
+            <section class="col-span-full shrink-1"> 
+                <article class="flex justify-between py-1 border-t border-gray-600">
+                    <div class="flex flex-col w-full px-2 divide-y">
+                            <div class="flex flex-col content-center justify-between text-sm">
+                                <div class="flex gap-2 text-sm">
+                                    <div class="italic text-live">LIVE</div>
+                                    <div class="text-gray-400">2. HZ</div>
+                                    <div>91"</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">CD Independiente Junior</div>
+                                    <div class="flex content-center gap-1 px-2">
+                                        <div class="w-2 my-1 bg-red-600 rounded-sm"></div>
+                                        <div class="w-2 my-1 bg-yellow-400 rounded-sm"></div>
+                                        <div>0</div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">Imbabura</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="text-xs text-gray-400">2023-03-23 00:00:00</div>
+                            </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="hidden mr-2 text-sm lg:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item-up">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item-down">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden mr-2 text-sm xl:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item-up">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex mr-2 text-sm gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article> 
+                <article class="flex justify-between py-1 border-t border-gray-600">
+                    <div class="flex flex-col w-full px-2 divide-y">
+                            <div class="flex flex-col content-center justify-between text-sm">
+                                <div class="flex gap-2 text-sm">
+                                    <div class="italic text-live">LIVE</div>
+                                    <div class="text-gray-400">2. HZ</div>
+                                    <div>91"</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">CD Independiente Junior</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">Imbabura</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="text-xs text-gray-400">2023-03-23 00:00:00</div>
+                            </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="hidden mr-2 text-sm lg:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden mr-2 text-sm xl:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex mr-2 text-sm gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article> 
+                <article class="flex justify-between py-1 border-t border-gray-600">
+                    <div class="flex flex-col w-full px-2 divide-y">
+                            <div class="flex flex-col content-center justify-between text-sm">
+                                <div class="flex gap-2 text-sm">
+                                    <div class="italic text-live">LIVE</div>
+                                    <div class="text-gray-400">2. HZ</div>
+                                    <div>91"</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">CD Independiente Junior</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">Imbabura</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="text-xs text-gray-400">2023-03-23 00:00:00</div>
+                            </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="hidden mr-2 text-sm lg:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden mr-2 text-sm xl:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex mr-2 text-sm gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article> 
+                <article class="flex justify-between py-1 border-t border-gray-600">
+                    <div class="flex flex-col w-full px-2 divide-y">
+                            <div class="flex flex-col content-center justify-between text-sm">
+                                <div class="flex gap-2 text-sm">
+                                    <div class="italic text-live">LIVE</div>
+                                    <div class="text-gray-400">2. HZ</div>
+                                    <div>91"</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">CD Independiente Junior</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">Imbabura</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="text-xs text-gray-400">2023-03-23 00:00:00</div>
+                            </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="hidden mr-2 text-sm lg:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden mr-2 text-sm xl:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex mr-2 text-sm gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article> 
+                <article class="flex justify-between py-1 border-t border-gray-600">
+                    <div class="flex flex-col w-full px-2 divide-y">
+                            <div class="flex flex-col content-center justify-between text-sm">
+                                <div class="flex gap-2 text-sm">
+                                    <div class="italic text-live">LIVE</div>
+                                    <div class="text-gray-400">2. HZ</div>
+                                    <div>91"</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">CD Independiente Junior</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">Imbabura</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="text-xs text-gray-400">2023-03-23 00:00:00</div>
+                            </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="hidden mr-2 text-sm lg:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden mr-2 text-sm xl:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex mr-2 text-sm gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article> 
+                <article class="flex justify-between py-1 border-t border-gray-600">
+                    <div class="flex flex-col w-full px-2 divide-y">
+                            <div class="flex flex-col content-center justify-between text-sm">
+                                <div class="flex gap-2 text-sm">
+                                    <div class="italic text-live">LIVE</div>
+                                    <div class="text-gray-400">2. HZ</div>
+                                    <div>91"</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">CD Independiente Junior</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">Imbabura</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="text-xs text-gray-400">2023-03-23 00:00:00</div>
+                            </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="hidden mr-2 text-sm lg:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden mr-2 text-sm xl:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex mr-2 text-sm gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article> 
+                <article class="flex justify-between py-1 border-t border-gray-600">
+                    <div class="flex flex-col w-full px-2 divide-y">
+                            <div class="flex flex-col content-center justify-between text-sm">
+                                <div class="flex gap-2 text-sm">
+                                    <div class="italic text-live">LIVE</div>
+                                    <div class="text-gray-400">2. HZ</div>
+                                    <div>91"</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">CD Independiente Junior</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">Imbabura</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="text-xs text-gray-400">2023-03-23 00:00:00</div>
+                            </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="hidden mr-2 text-sm lg:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden mr-2 text-sm xl:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex mr-2 text-sm gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article> 
+                <article class="flex justify-between py-1 border-t border-gray-600">
+                    <div class="flex flex-col w-full px-2 divide-y">
+                            <div class="flex flex-col content-center justify-between text-sm">
+                                <div class="flex gap-2 text-sm">
+                                    <div class="italic text-live">LIVE</div>
+                                    <div class="text-gray-400">2. HZ</div>
+                                    <div>91"</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">CD Independiente Junior</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">Imbabura</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="text-xs text-gray-400">2023-03-23 00:00:00</div>
+                            </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="hidden mr-2 text-sm lg:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden mr-2 text-sm xl:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex mr-2 text-sm gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article> 
+                <article class="flex justify-between py-1 border-t border-gray-600">
+                    <div class="flex flex-col w-full px-2 divide-y">
+                            <div class="flex flex-col content-center justify-between text-sm">
+                                <div class="flex gap-2 text-sm">
+                                    <div class="italic text-live">LIVE</div>
+                                    <div class="text-gray-400">2. HZ</div>
+                                    <div>91"</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">CD Independiente Junior</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">Imbabura</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="text-xs text-gray-400">2023-03-23 00:00:00</div>
+                            </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="hidden mr-2 text-sm lg:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden mr-2 text-sm xl:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex mr-2 text-sm gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article> 
+                <article class="flex justify-between py-1 border-t border-gray-600">
+                    <div class="flex flex-col w-full px-2 divide-y">
+                            <div class="flex flex-col content-center justify-between text-sm">
+                                <div class="flex gap-2 text-sm">
+                                    <div class="italic text-live">LIVE</div>
+                                    <div class="text-gray-400">2. HZ</div>
+                                    <div>91"</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">CD Independiente Junior</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">Imbabura</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="text-xs text-gray-400">2023-03-23 00:00:00</div>
+                            </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="hidden mr-2 text-sm lg:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden mr-2 text-sm xl:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex mr-2 text-sm gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article> 
+                <article class="flex justify-between py-1 border-t border-gray-600">
+                    <div class="flex flex-col w-full px-2 divide-y">
+                            <div class="flex flex-col content-center justify-between text-sm">
+                                <div class="flex gap-2 text-sm">
+                                    <div class="italic text-live">LIVE</div>
+                                    <div class="text-gray-400">2. HZ</div>
+                                    <div>91"</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">CD Independiente Junior</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="flex justify-between">
+                                    <div class="min-w-fit">Imbabura</div>
+                                    <div class="px-2">0</div>
+                                </div>
+                                <div class="text-xs text-gray-400">2023-03-23 00:00:00</div>
+                            </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="hidden mr-2 text-sm lg:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden mr-2 text-sm xl:flex gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex mr-2 text-sm gap-x-2">
+                            <div class="flex gap-x-2">
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">2.23</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.48</div>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <div class="odds-item">3.64</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article> 
+            </section>
+        </section>
+        <!-- RIGHT -->
+        <section class="hidden grid-flow-col grid-cols-4 col-span-2 col-start-11 row-span-6 xl:grid">
+            <div class="col-span-full">
+                <div class="space-y-8">
+                    <div class="h-64 px-2 py-4 text-center border">
+                        <div>Wettschein</div>
+                            <div class="mt-16">Wettschein leer</div>
+                        </div>
+                        <div class="h-64 px-2 py-4 text-center border">
+                            <div>Top-Gewinner</div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- <section class="grid grid-flow-col grid-cols-4 col-span-3">
+        </section> -->
+        <nav class="flex col-span-full bg-bgDark w-full px-1 py-4 text-white text-[0.6rem] fixed bottom-0 justify-evenly">
+            <div class="flex flex-col items-center w-1/5 hover:text-live">
+                <img src="./assets/img/live.png" width="30px" alt="live-logo">
+                <p>Live</p>
+            </div>
+            <div class="flex flex-col items-center w-1/5 hover:text-live">
+                <img src="./assets/img/calendar.png" width="30px" alt="kalender-ogo">
+                <p>Kalender</p>
+            </div>
+            <div class="flex flex-col items-center w-1/5 hover:text-live">
+                <img src="./assets/img/soccer.png" width="30px" alt="fussball-logo">
+                <p>Fußball</p>
+            </div>
+            <div class="flex flex-col items-center w-1/5 hover:text-live">
+                <img src="./assets/img/tennis.png" width="30px" alt="tennis-logo">
+                <p>Tennis</p>
+            </div>
+            <div class="flex flex-col items-center w-1/5 hover:text-live">
+                <img src="./assets/img/basketball.png" width="30px" alt="basketball-logo">
+                <p>Basketball</p>
+            </div>
+            <div class="flex flex-col items-center w-1/5 hover:text-live">
+                <img src="./assets/img/burgerMenu.png" width="30px" alt="azsport-logo">
+                <p>A-Z Sport</p>
+            </div>
+        </nav>
+    </main>
+    
+
+    <footer class="bottom-0 px-4 py-6 text-gray-100 bg-gray-900">
+        <div class="flex justify-center gap-x-24">
+            <div>
+                <div class="flex gap-x-2">
+                    <a class="text-blue-400 uppercase" href="https://totobet.dirodata.de/lang/en">en</a>
+                    <a class="uppercase" href="https://totobet.dirodata.de/lang/de">de</a>
+                    <a class="uppercase" href="https://totobet.dirodata.de/lang/fr">fr</a>
+                </div>
+            </div>
+            <div class="flex justify-between gap-x-2">
+                <a href="https://totobet.dirodata.de/page/terms">Terms</a> |
+                <a href="https://totobet.dirodata.de/page/imprint">Imprint</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/livewire/livewire.js?id=fe747446aa84856d8b66" data-turbo-eval="false" data-turbolinks-eval="false" ></script><script data-turbo-eval="false" data-turbolinks-eval="false" >window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'DiCrtMWTwlIlpdSCQ8oGYOcOd7GoPLGnSUipTCXl';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
+
+</body>
+</html>
